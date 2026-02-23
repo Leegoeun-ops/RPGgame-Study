@@ -2,25 +2,29 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     public Animator anim { get; private set; }
     public Rigidbody2D rb { get; private set; }
 
-    //public Rigidbody2D rb;
-    private PlayerInputSet input;
+    public PlayerInputSet input { get; private set; }
+
     private StateMachine stateMachine;
 
     public Player_IdleState idleState { get; private set; }
     public Player_MoveState moveState { get; private set; }
+    public Player_JumpState jumpState { get; private set; }
+    public Player_FallState fallState { get; private set; }
+
 
     public Vector2 moveInput { get; private set; }
+    //public bool jumpPressed;
 
     [Header("Movement details")]
     public float moveSpeed;
+    public float jumpForce = 5;
 
     private bool facingRight = true;
 
-private void Awake()
+    private void Awake()
     {
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -30,17 +34,17 @@ private void Awake()
 
         idleState = new Player_IdleState(this, stateMachine, "idle");
         moveState = new Player_MoveState(this, stateMachine, "move");
+        jumpState = new Player_JumpState(this, stateMachine, "jumpFall");
+        fallState = new Player_FallState(this, stateMachine, "jumpFall");
     }
 
     private void OnEnable()
     {
         input.Enable();
 
-        //input.Player.Movement.started
-        //input.Player.Movement.performed
-        //input.Player.Movement.canceled
         input.Player.Movement.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
         input.Player.Movement.canceled += ctx => moveInput = Vector2.zero;
+
     }
 
     private void OnDisable()
