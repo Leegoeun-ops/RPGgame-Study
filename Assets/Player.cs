@@ -17,13 +17,16 @@ public class Player : MonoBehaviour
     [Header("Movement details")]
     public float moveSpeed;
     public float jumpForce = 5;
+
+    [Range(0,1)]
+    public float inAirMoveMultiplier = .7f; //should be from 0 to 1;
     private bool facingRight = true;
     public Vector2 moveInput { get; private set; }
 
     [Header("Collision detection")]
     [SerializeField] private float groundCheckDistance;
     [SerializeField] private LayerMask whatIsGround;
-    public bool groundDetected;
+    public bool groundDetected { get; private set; }
 
     private void Awake()
     {
