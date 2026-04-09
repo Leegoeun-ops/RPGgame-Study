@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 17864649}
   - component: {fileID: 17864648}
   m_Layer: 6
-  m_Name: Platform (1)
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -359,7 +359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &101735021
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -523,8 +523,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb70f1350aac174db1d2ab603d6655f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackVelocity: {x: 3, y: 1.5}
+  attackVelocity:
+  - {x: 3, y: 1.5}
+  - {x: 1, y: 2.5}
+  - {x: 4, y: 5}
   attackVelocityDuration: 0.1
+  comboResetTime: 1
   moveSpeed: 8
   jumpForce: 12
   wallJumpForce: {x: 6, y: 12}
@@ -741,7 +745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &235264681
 Transform:
   m_ObjectHideFlags: 0
