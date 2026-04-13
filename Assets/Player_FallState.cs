@@ -6,6 +6,13 @@ public class Player_FallState : Player_AiredState
     {
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+
+        Debug.Log("I enter fall state! " + "Frame Is:" + Time.frameCount);
+
+    }
     public override void Update()
     {
         base.Update();

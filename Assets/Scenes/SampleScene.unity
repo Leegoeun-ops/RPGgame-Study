@@ -251,8 +251,8 @@ Transform:
   m_LocalScale: {x: 12.623122, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 101735023}
   - {fileID: 235264681}
+  - {fileID: 101735023}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &66757684
@@ -527,6 +527,7 @@ MonoBehaviour:
   - {x: 3, y: 1.5}
   - {x: 1, y: 2.5}
   - {x: 4, y: 5}
+  jumpAttackVelocity: {x: 5, y: -6}
   attackVelocityDuration: 0.1
   comboResetTime: 1
   moveSpeed: 8
@@ -745,7 +746,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &235264681
 Transform:
   m_ObjectHideFlags: 0

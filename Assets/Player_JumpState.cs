@@ -18,8 +18,10 @@ public class Player_JumpState : Player_AiredState
     {
         base.Update();
 
-        if (rb.linearVelocity.y < 0)
+        if (rb.linearVelocity.y < 0 && stateMachine.currentState != player.jumpAttackState)
+        {
+            Debug.Log("I transfer to fall state!" + "Frame Is:" + Time.frameCount );
             stateMachine.ChangeState(player.fallState);
-
+        }
     }
 }
