@@ -1,7 +1,7 @@
 using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 
-public class Player_BasicAttackState : EntityState
+public class Player_BasicAttackState : PlayerState
 {
     private float attackVelocityTimer;
     private float lastTimeAttacked;

@@ -470,11 +470,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bb70f1350aac174db1d2ab603d6655f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheckDistance: 1.4
+  wallCheckDistance: 0.5
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
+  primaryWallCheck: {fileID: 1011669740}
+  secondaryWallCheck: {fileID: 1063463993}
   attackVelocity:
   - {x: 3, y: 1.5}
   - {x: 1, y: 2.5}
   - {x: 4, y: 5}
-  jumpAttackVelocity: {x: 5, y: -6}
+  jumpAttackVelocity: {x: 4, y: -6}
   attackVelocityDuration: 0.1
   comboResetTime: 1
   moveSpeed: 8
@@ -484,13 +491,6 @@ MonoBehaviour:
   wallSlideSlowMultiplier: 0.4
   dashDuration: 0.25
   dashSpeed: 20
-  groundCheckDistance: 1.4
-  wallCheckDistance: 0.5
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 64
-  primaryWallCheck: {fileID: 1011669740}
-  secondaryWallCheck: {fileID: 1063463993}
 --- !u!50 &201124316
 Rigidbody2D:
   serializedVersion: 5
