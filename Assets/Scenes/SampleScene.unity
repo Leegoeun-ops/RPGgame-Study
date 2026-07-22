@@ -3048,6 +3048,8 @@ MonoBehaviour:
   groundCheck: {fileID: 1022200458}
   primaryWallCheck: {fileID: 1544707096}
   secondaryWallCheck: {fileID: 1544707096}
+  battleMoveSpeed: 3
+  attackDistance: 2
   idleTime: 2
   moveSpeed: 1.4
   moveAnimSpeedMultiplier: 1
